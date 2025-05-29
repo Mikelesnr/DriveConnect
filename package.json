@@ -1,0 +1,16 @@
+{
+  "name": "driveconnect",
+  "version": "1.0.0",
+  "description": "Api for car sake company.",
+  "license": "ISC",
+  "author": "Michael Mwanza, Stephanie Dacullo Selanoba, Ivan Maximiliano Leffalle, Adetokunbo Olutola Osibo",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.15.1"
+  }
+}
