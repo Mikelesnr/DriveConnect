@@ -4,6 +4,7 @@ const connectDB = require("./database/db");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./config/swagger.json");
 const routes = require("./routes"); // Import routing directory
+const cors = require("cors"); // Import CORS to fix network failure
 
 const app = express();
 
@@ -12,6 +13,11 @@ connectDB();
 
 // Middleware Section
 app.use(express.json()); // Parse incoming JSON requests
+app.use(
+  cors({
+    origin: process.env.SERVER_URL || "https://your-api-url.onrender.com",
+  })
+); // Enable CORS for external requests
 
 // API Documentation Route
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
