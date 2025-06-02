@@ -13,6 +13,7 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongoose": "^8.15.1",
     "swagger-autogen": "^2.23.7",
