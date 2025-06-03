@@ -6,7 +6,6 @@ const customerSchema = new mongoose.Schema({
   lastname: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   phone: { type: String, required: true },
-  purchases: [{ type: mongoose.Schema.Types.ObjectId, ref: "Sales" }],
 });
 
 module.exports = mongoose.model("Customer", customerSchema);
