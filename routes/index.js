@@ -5,4 +5,7 @@ const indexController = require("../controllers/index"); // Import index control
 // Base Route - Serves the Home Page
 router.get("/", indexController.handleIndex);
 
+// Cars Route - Serves the Cars Page
+router.use("/cars", require("./cars"));
+
 module.exports = router;
