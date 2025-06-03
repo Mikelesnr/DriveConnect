@@ -1,0 +1,38 @@
+// Cars API
+
+### Get all cars
+GET http://localhost:5000/cars
+
+### Get a car by ID
+GET http://localhost:5000/cars/683efb3b3c03439c0753d2ca
+
+### Create a new car
+POST http://localhost:5000/cars
+Content-Type: application/json
+
+{
+  "make": "Honda",
+  "model": "Testing",
+  "year": 2024,
+  "category_id": "60d5ec49f9a1a72b14d8b133", 
+  "status": "available",
+  "color": "black",
+  "price": 70000
+}
+
+### Update a car by ID
+PUT http://localhost:5000/cars/:id
+Content-Type: application/json
+
+{
+  "make": "Toyota",
+  "model": "Corolla",
+  "year": 2021,
+  "category_id": "60d5ec49f9a1a72b14d8b123",  
+  "status": "reserved",
+  "color": "Red",
+  "price": 28000
+}
+
+### Delete a car by ID
+DELETE http://localhost:5000/cars/683f01e0837c03013d8221a7
