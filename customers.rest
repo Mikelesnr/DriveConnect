@@ -1,0 +1,31 @@
+//localhost
+
+// Customers API
+// ### Get all customers
+GET http://localhost:5000/customers 
+### Get a customer by ID
+GET http://localhost:5000/customers/683f140f821641a0a951dd0a
+### Create a new customer
+POST http://localhost:5000/customers
+Content-Type: application/json
+
+{
+  "firstname": "New",
+  "lastname": "test",
+  "email": "new.test@example.com",
+  "phone": "123-456-5869"
+}
+
+### Update a customer by ID
+PUT http://localhost:5000/customers/683f140f821641a0a951dd0a
+Content-Type: application/json
+
+{
+  "firstname": "Jane",
+  "lastname": "Doe",
+  "email": "jane.doe@example.com",
+  "phone": "987-654-3210"
+}
+
+### Delete a customer by ID
+DELETE http://localhost:5000/customers/683f1447821641a0a951dd16

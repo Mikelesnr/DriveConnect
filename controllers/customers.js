@@ -3,7 +3,10 @@ const ObjectId = mongoose.Types.ObjectId;
 
 const Customer = require("../models/customer-model");
 
+// Handle getting all customers
+// This function is responsible for fetching all customers from the database.
 const handleGetCustomers = async (req, res) => {
+  //#Swagger-tags["Customers"]
   try {
     const customers = await Customer.find();
     res.status(200).json(customers);
@@ -13,7 +16,10 @@ const handleGetCustomers = async (req, res) => {
   }
 };
 
+// Handle getting a customer by ID
+// This function is responsible for fetching a customer's details from the database by their ID.
 const handleGetCustomerById = async (req, res) => {
+  //#Swagger-tags["Customers"]
   const customerId = req.params.id;
 
   if (!ObjectId.isValid(customerId)) {
@@ -32,10 +38,13 @@ const handleGetCustomerById = async (req, res) => {
   }
 };
 
+// Handle creating a new customer
+// This function is responsible for adding a new customer to the database.
 const handleCreateCustomer = async (req, res) => {
-  const { name, email, phone, address } = req.body;
+  //#Swagger-tags["Customers"]
+  const { firstname, lastname, email, phone } = req.body;
 
-  if (!name || !email || !phone || !address) {
+  if (!firstname || !lastname || !email || !phone) {
     return res
       .status(400)
       .json({ error: "All required fields must be provided" });
@@ -43,10 +52,10 @@ const handleCreateCustomer = async (req, res) => {
 
   try {
     const newCustomer = new Customer({
-      name,
+      firstname,
+      lastname,
       email,
       phone,
-      address,
     });
 
     await newCustomer.save();
@@ -57,9 +66,12 @@ const handleCreateCustomer = async (req, res) => {
   }
 };
 
+// Handle updating a customer
+// This function is responsible for updating an existing customer's details in the database.
 const handleUpdateCustomer = async (req, res) => {
+  //#Swagger-tags["Customers"]
   const customerId = req.params.id;
-  const { name, email, phone, address } = req.body;
+  const { firstname, lastname, email, phone } = req.body;
 
   if (!ObjectId.isValid(customerId)) {
     return res.status(400).json({ error: "Invalid customer ID" });
@@ -68,7 +80,7 @@ const handleUpdateCustomer = async (req, res) => {
   try {
     const updatedCustomer = await Customer.findByIdAndUpdate(
       customerId,
-      { name, email, phone, address },
+      { firstname, lastname, email, phone },
       { new: true }
     );
 
@@ -83,7 +95,10 @@ const handleUpdateCustomer = async (req, res) => {
   }
 };
 
+// Handle deleting a customer
+// This function is responsible for removing a customer from the database by their ID.
 const handleDeleteCustomer = async (req, res) => {
+  //#Swagger-tags["Customers"]
   const customerId = req.params.id;
 
   if (!ObjectId.isValid(customerId)) {
