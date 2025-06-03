@@ -52,3 +52,24 @@ exports.buildHome = () => {
     </html>
     `;
 };
+
+// pagination function
+exports.paginate = async (model, page = 1, limit = 10, populateFields = "") => {
+  const skip = (page - 1) * limit;
+  const totalDocuments = await model.countDocuments();
+  const totalPages = Math.ceil(totalDocuments / limit);
+
+  const results = await model
+    .find()
+    .skip(skip)
+    .limit(limit)
+    .populate(populateFields);
+
+  return {
+    totalItems: totalDocuments,
+    totalPages,
+    currentPage: page,
+    pageSize: limit,
+    data: results,
+  };
+};
