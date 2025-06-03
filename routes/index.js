@@ -12,4 +12,7 @@ router.use("/users", userRoutes);
 router.use("/employees", employeeRoutes);
 router.use("/sales", salesRoutes);
 
+// Cars Route - Serves the Cars Page
+router.use("/cars", require("./cars"));
+
 module.exports = router;
