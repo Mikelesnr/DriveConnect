@@ -3,8 +3,6 @@ const express = require("express");
 const connectDB = require("./database/db");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./config/swagger.json");
-const routes = require("./routes"); // Import routing directory
-const cors = require("cors"); // Import CORS to fix network failure
 
 const app = express();
 
@@ -13,17 +11,12 @@ connectDB();
 
 // Middleware Section
 app.use(express.json()); // Parse incoming JSON requests
-app.use(
-  cors({
-    origin: process.env.SERVER_URL || "https://your-api-url.onrender.com",
-  })
-); // Enable CORS for external requests
 
 // API Documentation Route
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Primary API Routes (Handled in `routes/index.js`)
-app.use("/", routes); // No direct routes in `server.js`
+app.use("/", require("./routes"));
 
 // Global Error Handling Middleware
 app.use((err, req, res, next) => {
@@ -33,8 +26,7 @@ app.use((err, req, res, next) => {
 
 // Start Server
 const PORT = process.env.PORT || 5000;
+const serverUrl = process.env.SERVER_URL || "http://localhost:5000";
 app.listen(PORT, () => {
-  console.log(
-    `Server running at ${process.env.SERVER_URL || "http://localhost"}:${PORT}`
-  );
+  console.log(`Server running at ${serverUrl}`);
 });
