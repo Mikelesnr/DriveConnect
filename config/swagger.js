@@ -8,16 +8,14 @@ const doc = {
     description: "An API for managing car sales, inventory, and transactions.",
     version: "1.0.0",
   },
-  host: process.env.SERVER_URL || "localhost:5000",
-  schemes: ["http", "https"],
-  basePath: "/",
-  consumes: ["application/json"],
-  produces: ["application/json"],
+  host: process.env.SERVER_URL.replace(/^https?:\/\//, "") || "localhost:3000",
+  schemes: [process.env.PROTOCOL || "http"],
 };
 
-const outputFile = "./config/swagger.json"; // Output file
-const endpointsFiles = ["../routes/index.js"]; // Scans routing directory only
+const outputFile = "./swagger.json";
+const endpointsFiles = ["../routes/index.js"];
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-  console.log("Swagger documentation generated successfully.");
+  console.log("✅ Swagger documentation generated successfully!");
+  process.exit(); // Forces the script to exit after completion
 });
