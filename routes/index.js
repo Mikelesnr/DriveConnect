@@ -9,5 +9,7 @@ router.get("/", indexController.handleIndex);
 router.use("/cars", require("./cars"));
 // Customers Route - Serves the Customers Page
 router.use("/customers", require("./customers"));
+// Categories Route - Serves the Categories Page
+router.use("/categories", require("./categories"));
 
 module.exports = router;

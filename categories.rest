@@ -1,0 +1,27 @@
+//localhost
+// Categories API
+ ### Get all categories
+GET http://localhost:5000/categories
+
+### Get a category by ID
+GET http://localhost:5000/categories/683faac9d2104f24239b2872
+### Create a new category
+POST http://localhost:5000/categories
+Content-Type: application/json
+
+{
+  "name": "SUV",
+  "description": "Sport Utility Vehicle"
+}
+### Update a category by ID
+PUT http://localhost:5000/categories/683faac9d2104f24239b2872
+Content-Type: application/json
+
+{
+  "name": "Sedan",
+  "description": "A compact car"
+}
+
+### Delete a category by ID
+DELETE http://localhost:5000/categories/683faaa8d2104f24239b2869
+
