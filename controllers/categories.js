@@ -61,6 +61,7 @@ const handleCreateCategory = async (req, res) => {
 
 const handleUpdateCategory = async (req, res) => {
   //#Swagger-tags["Categories"]
+
   const { id } = req.params;
   const { name, description } = req.body;
 
