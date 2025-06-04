@@ -3,7 +3,11 @@ const ObjectId = mongoose.Types.ObjectId;
 
 const Car = require("../models/car-model");
 
+// Handle getting all cars
+// This function is responsible for fetching all cars from the database.
 const handleGetCars = async (req, res) => {
+  //#Swagger-tags["Cars"]
+  //#Swagger-summary["Get all cars"]
   try {
     const cars = await Car.find();
     res.status(200).json(cars);
@@ -13,7 +17,11 @@ const handleGetCars = async (req, res) => {
   }
 };
 
+// Handle getting a car by ID
+// This function is responsible for fetching a car's details from the database by its ID.
 const handleGetCarById = async (req, res) => {
+  //#Swagger-tags["Cars"]
+  //#Swagger-summary["Get a car by ID"]
   const carId = req.params.id;
 
   if (!ObjectId.isValid(carId)) {
@@ -32,7 +40,11 @@ const handleGetCarById = async (req, res) => {
   }
 };
 
+// Handle creating a new car
+// This function is responsible for adding a new car to the database.
 const handleCreateCar = async (req, res) => {
+  //#Swagger-tags["Cars"]
+  //#Swagger-summary["Create a new car"]
   const { make, model, year, price, category_id, status, color } = req.body;
 
   if (!make || !model || !year || !price || !category_id || !status) {
@@ -60,7 +72,11 @@ const handleCreateCar = async (req, res) => {
   }
 };
 
+// Handle updating a car by ID
+// This function is responsible for updating a car's details in the database.
 const handleUpdateCar = async (req, res) => {
+  //#Swagger-tags["Cars"]
+  //#Swagger-summary["Update a car by ID"]
   const carId = req.params.id;
   const { make, model, year, price, category_id, status, color } = req.body;
 
@@ -92,7 +108,11 @@ const handleUpdateCar = async (req, res) => {
   }
 };
 
+// Handle deleting a car by ID
+// This function is responsible for deleting a car from the database by its ID.
 const handleDeleteCar = async (req, res) => {
+  //#Swagger-tags["Cars"]
+  //#Swagger-summary["Delete a car by ID"]
   const carId = req.params.id;
 
   if (!ObjectId.isValid(carId)) {
