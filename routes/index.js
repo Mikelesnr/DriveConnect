@@ -4,6 +4,7 @@ const indexController = require("../controllers/index"); // Import index control
 const userRoutes = require("./userRoutes.js");
 const employeeRoutes = require("./employeeRoutes");
 const salesRoutes = require("./salesRoutes");
+const storesRoutes = require("./storesRoutes.js")
 
 // Base Route - Serves the Home Page
 router.get("/", indexController.handleIndex);
@@ -11,6 +12,7 @@ router.get("/", indexController.handleIndex);
 router.use("/users", userRoutes);
 router.use("/employees", employeeRoutes);
 router.use("/sales", salesRoutes);
+router.use("/stores", storesRoutes)
 
 // Cars Route - Serves the Cars Page
 router.use("/cars", require("./cars"));

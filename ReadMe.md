@@ -8,3 +8,7 @@ Site Url: [Welcome to Drive Connect](https://github.com/Mikelesnr/DriveConnect)
 
 
 git pull origin main
+
+node config swagger.js 
+npm install 
+npm run prestart - automatically generate the swagger
