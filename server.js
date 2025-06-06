@@ -4,6 +4,7 @@ const connectDB = require("./database/db");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./config/swagger.json");
 const cors = require('cors');
+const cookieparser = require('cookie-parser');
 
 const app = express();
 
@@ -12,6 +13,7 @@ connectDB();
 
 // Middleware Section
 app.use(express.json()); // Parse incoming JSON requests
+app.use(cookieparser()); // Parse cookies
 
 // CORS
 app.use(cors());

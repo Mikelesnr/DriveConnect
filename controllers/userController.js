@@ -2,7 +2,9 @@ const User = require("../models/user-model");
 const Employee = require("../models/employee-model");
 const { hashPassword, comparePassword } = require("../utilities/password");
 const { paginate } = require("../utilities");
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const passport = require('passport');
+const expressAsyncHandler = require('express-async-handler');
 
 // Create a new user
 const createUser = async (req, res) => {
@@ -61,6 +63,15 @@ const loginUser = async (req, res) => {
     // Generate token
     const token = generateToken(user._id);
 
+    // Set JWT as HTTP-only cookie
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    });
+
+    // Send response without token in body
     res.status(200).json({
       message: 'Login successful',
       user: {
@@ -69,13 +80,31 @@ const loginUser = async (req, res) => {
         lastname: user.lastname,
         role: user.role,
         email: user.user_email,
-      },
-      token,
+      }
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
+
+const logoutUser = expressAsyncHandler(async (req, res) => {
+  // Destroy Passport session (if it exists)
+  req.logout(function (err) {
+    if (err) {
+      return res.status(500).json({ message: 'Error during logout', error: err });
+    }
+
+    // Clear JWT cookie
+    res.clearCookie('token', {
+      httpOnly: true,
+      sameSite: 'strict',
+      secure: process.env.NODE_ENV === 'production'
+    });
+
+    return res.status(200).json({ message: 'User logged out successfully' });
+  });
+});
+
 
 // Get all users with pagination (Admin only)
 const getAllUsers = async (req, res) => {
@@ -156,8 +185,11 @@ const generateToken = (id) => {
 module.exports = {
   createUser,
   loginUser,
+  logoutUser,
   getAllUsers,
   getUserById,
   updateUser,
   deleteUser,
+  // requestPasswordReset,
+  // resetPassword,
 };

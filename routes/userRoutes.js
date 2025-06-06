@@ -1,11 +1,9 @@
 const express = require("express");
+const router = express.Router();
 const userController = require("../controllers/userController");
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const {protect} = require('../utilities/authMiddleware');
-
-
-const router = express.Router();
 
 router.post("/", 
     /* #swagger.tags = ['Users']

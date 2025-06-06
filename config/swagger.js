@@ -47,6 +47,10 @@ const doc = {
       name: 'Store',
       description: 'Endpoints related to sales store management'
     },
+    {
+      name: 'Reset Password',
+      description: 'Endpoints related to password reset functionality'
+    },
   ],
   components: {
     securitySchemes: {
