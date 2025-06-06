@@ -8,6 +8,9 @@ const employeeRoutes = require("./employeeRoutes");
 const customersRoutes = require("./customersRoutes");
 const categoriesRoutes = require("./categoriesRoutes");
 const carsRoutes = require("./carsRoutes");
+const swaggerRoutes = require('./swaggerRoutes');
+const returnsRoutes = require('./returnRoutes');
+const storeRoutes = require('./storeRoutes');
 
 // Base Route - Serves the Home Page
 router.get("/", 
@@ -21,5 +24,9 @@ router.use("/employees", employeeRoutes);
 router.use("/customers", customersRoutes);
 router.use("/categories", categoriesRoutes);
 router.use("/cars", carsRoutes);
+router.use('/', swaggerRoutes);
+router.use('/', swaggerRoutes);
+router.use('/returns', returnsRoutes);
+router.use('/store', storeRoutes);
 
 module.exports = router;

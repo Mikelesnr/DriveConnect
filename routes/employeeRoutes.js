@@ -1,5 +1,5 @@
 const express = require("express");
-const employeeController = require("../controllers/employeeController");
+const employeeController = require("../controllers/employeeController.js");
 const { isAdmin } = require("../utilities/middleware");
 
 const router = express.Router();

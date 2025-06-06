@@ -9,3 +9,5 @@ Site Url: [Welcome to Drive Connect](https://github.com/Mikelesnr/DriveConnect)
 Google Client ID: [DriveConnect](549016814970-k4vthhb223tgik90drm42bnpafl1ro1s.apps.googleusercontent.com)
 
 git pull origin main
+
+Seed Usage: // node seed.js [mapped key]

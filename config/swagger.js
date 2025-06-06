@@ -37,7 +37,15 @@ const doc = {
     },
     {
       name: 'Base',
-      description: 'Endpoint Serves the Home Page'
+      description: 'Endpoints Serves the Home Page'
+    },
+    {
+      name: 'Returns',
+      description: 'Endpoints related to sales returns management'
+    },
+    {
+      name: 'Store',
+      description: 'Endpoints related to sales store management'
     },
   ],
   components: {
