@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const storeController = require("../controllers/storeController");
+const {protect} = require('../utilities/authMiddleware');
 
 router.post(
     "/", 
@@ -8,6 +9,7 @@ router.post(
       #swagger.tags = ['Store']
       #swagger.description = 'Create a new store.'
     */
+    protect,
     storeController.createStore
 );
 
@@ -44,6 +46,7 @@ router.put(
       #swagger.tags = ['Store']
       #swagger.description = 'Update a store.'
     */
+    protect,
     storeController.updateStore
 );
 
@@ -53,6 +56,7 @@ router.delete(
       #swagger.tags = ['Store']
       #swagger.description = 'Delete a store.'
     */
+    protect,
     storeController.deleteStore
 );
 
