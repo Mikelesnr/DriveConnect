@@ -7,6 +7,9 @@ router.post(
     "/", 
     /*
       #swagger.tags = ['Store']
+      #swagger.security = [{
+        "Authorization": []
+      }]
       #swagger.description = 'Create a new store.'
     */
     protect,
@@ -44,6 +47,9 @@ router.put(
     "/:id",
     /*
       #swagger.tags = ['Store']
+        #swagger.security = [{
+          "Authorization": []
+        }]
       #swagger.description = 'Update a store.'
     */
     protect,
@@ -54,6 +60,9 @@ router.delete(
     "/:id", 
     /*
       #swagger.tags = ['Store']
+      #swagger.security = [{
+        "Authorization": []
+      }]
       #swagger.description = 'Delete a store.'
     */
     protect,

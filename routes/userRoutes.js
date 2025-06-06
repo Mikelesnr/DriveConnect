@@ -17,21 +17,33 @@ router.post("/login",
 
 router.get("/", protect,
     /* #swagger.tags = ['Users']
+       #swagger.security = [{
+            "Authorization": []
+        }]
      #swagger.description = 'Get all user' */
     userController.getAllUsers);
 
 router.get("/:id", protect,
     /* #swagger.tags = ['Users']
+       #swagger.security = [{
+          "Authorization": []
+        }]
      #swagger.description = 'Get a user by ID' */
      userController.getUserById);
 
 router.put("/:id", protect,
     /* #swagger.tags = ['Users']
+       #swagger.security = [{
+        "Authorization": []
+      }]
      #swagger.description = 'Update a user' */
      userController.updateUser);
 
 router.delete("/:id", protect,
     /* #swagger.tags = ['Users']
+       #swagger.security = [{
+        "Authorization": []
+      }]
      #swagger.description = 'Delete a user' */
      userController.deleteUser);
 
