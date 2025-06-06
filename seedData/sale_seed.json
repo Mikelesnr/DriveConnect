@@ -1,0 +1,18 @@
+[
+  {
+    "sale_id": "dc29383785f94b13ac2214f3",
+    "customer_id": "2f13a749b4e34216aa4aeaec",
+    "car_id": "9f6343cbf905481cbdb69ba4",
+    "employee_id": "f71a3cf461e741d58e284f8d",
+    "payment_method": "card",
+    "sale_date": "2024-08-08T12:54:41.492356"
+  },
+  {
+    "sale_id": "efef008198ed4559afe541d9",
+    "customer_id": "55683573f77647888602942a",
+    "car_id": "c010baac762c48409d8b2c34",
+    "employee_id": "6f7cf76419cc4e2e90ce892b",
+    "payment_method": "card",
+    "sale_date": "2024-08-19T12:54:41.492482"
+  }
+]

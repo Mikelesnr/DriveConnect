@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 
 // Import all models
-const Car = require('./models/carModel');
-const Category = require('./models/categoryModel');
-const Customer = require('./models/customerModel');
-const Employee = require('./models/employeeModel');
-const Return = require('./models/returnModel');
-const Sale = require('./models/saleModel');
-const Store = require('./models/storeModel');
-const User = require('./models/userModel');
+const Car = require('./models/car-model');
+const Category = require('./models/category-model');
+const Customer = require('./models/customer-model');
+const Employee = require('./models/employee-model');
+const Return = require('./models/return-model');
+const Sale = require('./models/sale-model');
+const Store = require('./models/store-model');
+const User = require('./models/user-model');
 
 // Load all seed data files
 const seedFiles = {
@@ -40,7 +40,7 @@ const args = process.argv.slice(2);
 
 async function seedDB() {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGODB_URL);
     console.log('✅ Connected to MongoDB');
 
     if (args.length === 0) {

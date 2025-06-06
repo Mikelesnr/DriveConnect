@@ -3,6 +3,7 @@ const express = require("express");
 const connectDB = require("./database/db");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./config/swagger.json");
+const cors = require('cors');
 
 const app = express();
 
@@ -11,6 +12,17 @@ connectDB();
 
 // Middleware Section
 app.use(express.json()); // Parse incoming JSON requests
+
+// CORS
+app.use(cors());
+
+// CORS headers
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Auth-Token, z-key');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  next();
+});
 
 // API Documentation Route
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));

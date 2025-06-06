@@ -1,0 +1,82 @@
+[
+  {
+    "category_name": "Sedan",
+    "description": "Compact and mid-size cars ideal for city driving."
+  },
+  {
+    "category_name": "SUV",
+    "description": "Sport Utility Vehicles with ample space and off-road capability."
+  },
+  {
+    "category_name": "Hatchback",
+    "description": "Small and practical vehicles with a rear door that swings upward."
+  },
+  {
+    "category_name": "Convertible",
+    "description": "Stylish cars with a retractable roof, perfect for sunny weather."
+  },
+  {
+    "category_name": "Pickup Truck",
+    "description": "Durable trucks with open cargo areas, great for heavy-duty work."
+  },
+  {
+    "category_name": "Coupe",
+    "description": "Two-door sporty vehicles for performance enthusiasts."
+  },
+  {
+    "category_name": "Minivan",
+    "description": "Spacious vehicles ideal for families and group travel."
+  },
+  {
+    "category_name": "Electric",
+    "description": "Battery-powered vehicles with zero emissions and high efficiency."
+  },
+  {
+    "category_name": "Hybrid",
+    "description": "Vehicles combining gasoline and electric power for better fuel economy."
+  },
+  {
+    "category_name": "Luxury",
+    "description": "High-end cars offering premium features and comfort."
+  },
+  {
+    "category_name": "Off-Road",
+    "description": "Vehicles built for rugged terrain and outdoor adventures."
+  },
+  {
+    "category_name": "Crossover",
+    "description": "Mix between a sedan and an SUV, ideal for daily commutes."
+  },
+  {
+    "category_name": "Diesel",
+    "description": "Vehicles with diesel engines for better fuel economy and torque."
+  },
+  {
+    "category_name": "Wagon",
+    "description": "Extended rear space for cargo without compromising passenger room."
+  },
+  {
+    "category_name": "Compact",
+    "description": "Small, efficient cars suited for tight urban environments."
+  },
+  {
+    "category_name": "Performance",
+    "description": "High-speed cars built for acceleration and handling."
+  },
+  {
+    "category_name": "Classic",
+    "description": "Vintage cars preserved for collection and display."
+  },
+  {
+    "category_name": "Commercial",
+    "description": "Fleet vehicles suitable for business and logistics."
+  },
+  {
+    "category_name": "Sports Car",
+    "description": "Aerodynamic cars built for speed and agility."
+  },
+  {
+    "category_name": "Economy",
+    "description": "Budget-friendly vehicles with low running costs."
+  }
+]
