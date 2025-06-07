@@ -5,49 +5,51 @@ const { protect } = require("../utilities/authMiddleware");
 
 const router = express.Router();
 
-router.post("/", 
-    /* #swagger.tags = ['Employees']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Register a new employee' */
-     protect,
-     employeeController.createEmployee);
+router.post(
+  "/",
+  /* #swagger.tags = ['Employees']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Register a new employee (Requires authentication)' */
+  protect,
+  employeeController.createEmployee
+);
 
-router.get("/", 
-     /* #swagger.tags = ['Employees']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Get all employees with role "admin"' */
-     protect,
-     isAdmin, employeeController.getAllEmployees);
+router.get(
+  "/",
+  /* #swagger.tags = ['Employees']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Get all employees with role "admin" (Admin only)' */
+  protect,
+  isAdmin,
+  employeeController.getAllEmployees
+);
 
-router.get("/:id", 
-     /* #swagger.tags = ['Employees']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Get an employee by ID' */
-     protect,
-     employeeController.getEmployeeById);
+router.get(
+  "/:id",
+  /* #swagger.tags = ['Employees']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Get an employee by ID (Requires authentication)' */
+  protect,
+  employeeController.getEmployeeById
+);
 
-router.put("/:id", 
-     /* #swagger.tags = ['Employees']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Update an employee by ID' */
-     protect,
-     employeeController.updateEmployee);
+router.put(
+  "/:id",
+  /* #swagger.tags = ['Employees']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Update an employee by ID (Requires authentication)' */
+  protect,
+  employeeController.updateEmployee
+);
 
-router.delete("/:id", 
-     /* #swagger.tags = ['Employees']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Delete an employee by ID by role "admin"' */
-     protect,
-     isAdmin, employeeController.deleteEmployee);
+router.delete(
+  "/:id",
+  /* #swagger.tags = ['Employees']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Delete an employee by ID by role "admin" (Admin only)' */
+  protect,
+  isAdmin,
+  employeeController.deleteEmployee
+);
 
 module.exports = router;

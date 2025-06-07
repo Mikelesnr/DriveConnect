@@ -4,49 +4,49 @@ const carsController = require("../controllers/cars");
 const { protect } = require("../utilities/authMiddleware");
 const { isAdmin } = require("../utilities/middleware");
 
-router.get("/", 
-    /* #swagger.tags = ['Cars']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Get all cars' */
-     protect, isAdmin,
-     carsController.handleGetCars); // 
+router.get(
+  "/",
+  /* #swagger.tags = ['Cars']
+     #swagger.description = 'Get all cars (No authentication required)' */
+  carsController.handleGetCars
+);
 
-router.get("/:id", 
-     /* #swagger.tags = ['Cars']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Get cars by ID' */
-     protect, isAdmin,
-     carsController.handleGetCarById);
+router.get(
+  "/:id",
+  /* #swagger.tags = ['Cars']
+     #swagger.description = 'Get car by ID (Requires authentication)' */
+  protect,
+  carsController.handleGetCarById
+);
 
-router.post("/", 
-    /* #swagger.tags = ['Cars']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Create a new car' */
-     protect, isAdmin,
-     carsController.handleCreateCar);
+router.post(
+  "/",
+  /* #swagger.tags = ['Cars']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Create a new car (Admin only)' */
+  protect,
+  isAdmin,
+  carsController.handleCreateCar
+);
 
-router.put("/:id", 
-     /* #swagger.tags = ['Cars']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Update a car by ID' */
-     protect, isAdmin,
-     carsController.handleUpdateCar);
+router.put(
+  "/:id",
+  /* #swagger.tags = ['Cars']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Update a car by ID (Admin only)' */
+  protect,
+  isAdmin,
+  carsController.handleUpdateCar
+);
 
-router.delete("/:id", 
-     /* #swagger.tags = ['Cars']
-     #swagger.security = [{
-         "Authorization": []
-     }]
-     #swagger.description = 'Delete a car by ID' */
-     protect, isAdmin,
-     carsController.handleDeleteCar);
+router.delete(
+  "/:id",
+  /* #swagger.tags = ['Cars']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Delete a car by ID (Admin only)' */
+  protect,
+  isAdmin,
+  carsController.handleDeleteCar
+);
 
 module.exports = router;
