@@ -10,6 +10,8 @@ const userSchema = new mongoose.Schema({
   },
   user_email: { type: String, required: true, unique: true },
   user_password: { type: String, required: true },
+  resetPasswordToken: String,
+  resetPasswordExpires: Date,
   user_id: { type: mongoose.Schema.Types.ObjectId, auto: true },
 });
 

@@ -1,0 +1,149 @@
+[
+  {
+    "address": "123 Elm Street, Springfield",
+    "phone": "555-123-4567",
+    "store_name": "Elm Auto Plaza",
+    "floor_size": 3000,
+    "status": "open"
+  },
+  {
+    "address": "456 Maple Ave, Shelbyville",
+    "phone": "555-987-6543",
+    "store_name": "Maple Motors",
+    "floor_size": 4500,
+    "status": "closed"
+  },
+  {
+    "address": "789 Oak Blvd, Capital City",
+    "phone": "555-678-2345",
+    "store_name": "Oak Car Center",
+    "floor_size": 5200,
+    "status": "open"
+  },
+  {
+    "address": "101 Pine Street, Ogdenville",
+    "phone": "555-321-5678",
+    "store_name": "Pine Ridge Auto",
+    "floor_size": 4100,
+    "status": "open"
+  },
+  {
+    "address": "202 Cedar Lane, North Haverbrook",
+    "phone": "555-222-8888",
+    "store_name": "Cedar Car Corner",
+    "floor_size": 2800,
+    "status": "closed"
+  },
+  {
+    "address": "303 Birch Road, Springfield",
+    "phone": "555-456-7890",
+    "store_name": "Birch Auto Mart",
+    "floor_size": 3900,
+    "status": "open"
+  },
+  {
+    "address": "404 Redwood Drive, Shelbyville",
+    "phone": "555-112-3344",
+    "store_name": "Redwood Rides",
+    "floor_size": 5000,
+    "status": "closed"
+  },
+  {
+    "address": "505 Chestnut Ave, Capital City",
+    "phone": "555-998-7654",
+    "store_name": "Chestnut Cars & Co.",
+    "floor_size": 4700,
+    "status": "open"
+  },
+  {
+    "address": "606 Willow Way, Ogdenville",
+    "phone": "555-888-7777",
+    "store_name": "Willow Wheels",
+    "floor_size": 3500,
+    "status": "open"
+  },
+  {
+    "address": "707 Spruce Street, North Haverbrook",
+    "phone": "555-333-2222",
+    "store_name": "Spruce Auto Sales",
+    "floor_size": 4300,
+    "status": "closed"
+  },
+  {
+    "address": "808 Poplar Blvd, Springfield",
+    "phone": "555-444-1212",
+    "store_name": "Poplar Premium Cars",
+    "floor_size": 3800,
+    "status": "open"
+  },
+  {
+    "address": "909 Fir Lane, Shelbyville",
+    "phone": "555-111-2323",
+    "store_name": "Fir Line Autos",
+    "floor_size": 2900,
+    "status": "open"
+  },
+  {
+    "address": "111 Aspen Ave, Capital City",
+    "phone": "555-777-8787",
+    "store_name": "Aspen Auto Emporium",
+    "floor_size": 5100,
+    "status": "closed"
+  },
+  {
+    "address": "222 Linden Street, Ogdenville",
+    "phone": "555-666-9090",
+    "store_name": "Linden Car Hub",
+    "floor_size": 2600,
+    "status": "open"
+  },
+  {
+    "address": "333 Magnolia Road, North Haverbrook",
+    "phone": "555-123-1010",
+    "store_name": "Magnolia Motors",
+    "floor_size": 4900,
+    "status": "closed"
+  },
+  {
+    "address": "444 Palm Street, Springfield",
+    "phone": "555-456-3434",
+    "store_name": "Palm City Cars",
+    "floor_size": 3400,
+    "status": "open"
+  },
+  {
+    "address": "555 Hickory Blvd, Shelbyville",
+    "phone": "555-232-4343",
+    "store_name": "Hickory Auto Center",
+    "floor_size": 3700,
+    "status": "open"
+  },
+  {
+    "address": "666 Cottonwood Ave, Capital City",
+    "phone": "555-212-3232",
+    "store_name": "Cottonwood Cars",
+    "floor_size": 4200,
+    "status": "closed"
+  },
+  {
+    "address": "777 Sequoia Drive, Ogdenville",
+    "phone": "555-343-2121",
+    "store_name": "Sequoia Auto Stop",
+    "floor_size": 3100,
+    "status": "open"
+  },
+  {
+    "address": "888 Acacia Blvd, North Haverbrook",
+    "phone": "555-565-6565",
+    "store_name": "Acacia Auto Gallery",
+    "floor_size": 4600,
+    "status": "open"
+  },
+  {
+    "address": "999 Cypress Way, Springfield",
+    "phone": "555-909-0000",
+    "store_name": "Cypress Cars Unlimited",
+    "floor_size": 3600,
+    "status": "closed"
+  }
+]

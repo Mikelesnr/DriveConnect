@@ -1,0 +1,182 @@
+[
+  {
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": 2020,
+    "category_id": "60d5ec49f0f1c90017ddc1a1",
+    "color": "Blue",
+    "status": "available",
+    "price": 18000
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2022,
+    "category_id": "60d5ec49f0f1c90017ddc1a2",
+    "color": "Red",
+    "status": "sold",
+    "price": 21000
+  },
+  {
+    "make": "Ford",
+    "model": "Escape",
+    "year": 2019,
+    "category_id": "60d5ec49f0f1c90017ddc1a3",
+    "color": "White",
+    "status": "reserved",
+    "price": 19500
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2021,
+    "category_id": "60d5ec49f0f1c90017ddc1a4",
+    "color": "Black",
+    "status": "available",
+    "price": 22000
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2023,
+    "category_id": "60d5ec49f0f1c90017ddc1a5",
+    "color": "Silver",
+    "status": "sold",
+    "price": 35000
+  },
+  {
+    "make": "BMW",
+    "model": "X3",
+    "year": 2018,
+    "category_id": "60d5ec49f0f1c90017ddc1a6",
+    "color": "Blue",
+    "status": "reserved",
+    "price": 28000
+  },
+  {
+    "make": "Audi",
+    "model": "A4",
+    "year": 2020,
+    "category_id": "60d5ec49f0f1c90017ddc1a7",
+    "color": "White",
+    "status": "available",
+    "price": 30000
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2019,
+    "category_id": "60d5ec49f0f1c90017ddc1a8",
+    "color": "Gray",
+    "status": "sold",
+    "price": 16000
+  },
+  {
+    "make": "Kia",
+    "model": "Sorento",
+    "year": 2021,
+    "category_id": "60d5ec49f0f1c90017ddc1a9",
+    "color": "Green",
+    "status": "available",
+    "price": 25000
+  },
+  {
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2022,
+    "category_id": "60d5ec49f0f1c90017ddc1aa",
+    "color": "Brown",
+    "status": "reserved",
+    "price": 23000
+  },
+  {
+    "make": "Mazda",
+    "model": "CX-5",
+    "year": 2020,
+    "category_id": "60d5ec49f0f1c90017ddc1ab",
+    "color": "Red",
+    "status": "available",
+    "price": 24500
+  },
+  {
+    "make": "Volkswagen",
+    "model": "Passat",
+    "year": 2017,
+    "category_id": "60d5ec49f0f1c90017ddc1ac",
+    "color": "Black",
+    "status": "sold",
+    "price": 17000
+  },
+  {
+    "make": "Subaru",
+    "model": "Outback",
+    "year": 2018,
+    "category_id": "60d5ec49f0f1c90017ddc1ad",
+    "color": "White",
+    "status": "available",
+    "price": 21000
+  },
+  {
+    "make": "Lexus",
+    "model": "RX 350",
+    "year": 2021,
+    "category_id": "60d5ec49f0f1c90017ddc1ae",
+    "color": "Blue",
+    "status": "reserved",
+    "price": 40000
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "year": 2019,
+    "category_id": "60d5ec49f0f1c90017ddc1af",
+    "color": "Orange",
+    "status": "available",
+    "price": 27000
+  },
+  {
+    "make": "Acura",
+    "model": "TLX",
+    "year": 2020,
+    "category_id": "60d5ec49f0f1c90017ddc1b0",
+    "color": "Silver",
+    "status": "sold",
+    "price": 31000
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2022,
+    "category_id": "60d5ec49f0f1c90017ddc1b1",
+    "color": "Gray",
+    "status": "reserved",
+    "price": 45000
+  },
+  {
+    "make": "Chrysler",
+    "model": "300",
+    "year": 2018,
+    "category_id": "60d5ec49f0f1c90017ddc1b2",
+    "color": "Dark Blue",
+    "status": "available",
+    "price": 22000
+  },
+  {
+    "make": "Dodge",
+    "model": "Durango",
+    "year": 2019,
+    "category_id": "60d5ec49f0f1c90017ddc1b3",
+    "color": "Red",
+    "status": "sold",
+    "price": 26000
+  },
+  {
+    "make": "Infiniti",
+    "model": "Q50",
+    "year": 2021,
+    "category_id": "60d5ec49f0f1c90017ddc1b4",
+    "color": "White",
+    "status": "available",
+    "price": 37000
+  }
+]
