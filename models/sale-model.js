@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const saleSchema = new mongoose.Schema({
-  sale_id: { type: mongoose.Schema.Types.ObjectId, auto: true },
   customer_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Customer",
