@@ -1,0 +1,20 @@
+[
+  {
+    "sale_id": "891ad49a-9dbb-4c5a-b694-28fd3602c251",
+    "reason": "Customer changed mind",
+    "refund_amount": 9366.22,
+    "return_date": "2025-03-04T12:52:10.849327"
+  },
+  {
+    "sale_id": "d00a6bce-9e40-461f-9c57-31ed92ebfb35",
+    "reason": "Wrong model delivered",
+    "refund_amount": 28195.23,
+    "return_date": "2024-12-31T12:52:10.849887"
+  },
+  {
+    "sale_id": "5a79142f-c5e6-4ff1-b5c9-b82d7104dfca",
+    "reason": "Color mismatch",
+    "refund_amount": 7873.44,
+    "return_date": "2025-02-27T12:52:10.850169"
+  }
+]

@@ -5,3 +5,11 @@ Document:[ Drive Connect API.docx](https://1drv.ms/w/c/84c565709c559531/EVxCB4lE
 GitHub Repo: [GitHub - Mikelesnr/DriveConnect](https://github.com/Mikelesnr/DriveConnect)
 
 Site Url: [Welcome to Drive Connect](https://github.com/Mikelesnr/DriveConnect)
+
+Google Client ID: [DriveConnect](549016814970-k4vthhb223tgik90drm42bnpafl1ro1s.apps.googleusercontent.com)
+
+git pull origin main
+
+auto run swagger, server and connect db simultaneously:  npm run start:dev 
+
+Seed Usage: // node seed.js [mapped key]

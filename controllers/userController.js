@@ -2,6 +2,9 @@ const User = require("../models/user-model");
 const Employee = require("../models/employee-model");
 const { hashPassword, comparePassword } = require("../utilities/password");
 const { paginate } = require("../utilities");
+const jwt = require('jsonwebtoken');
+const passport = require('passport');
+const expressAsyncHandler = require('express-async-handler');
 
 // Create a new user
 const createUser = async (req, res) => {
@@ -30,6 +33,7 @@ const createUser = async (req, res) => {
       role,
       user_email,
       user_password: hashedPassword,
+      
     });
     await user.save();
 
@@ -38,6 +42,69 @@ const createUser = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+// Login user
+const loginUser = async (req, res) => {
+  try {
+    const { user_email, user_password } = req.body;
+
+    // Find the user by email
+    const user = await User.findOne({ user_email });
+    if (!user) {
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+
+    // Compare passwords
+    const isMatch = await comparePassword(user_password, user.user_password);
+    if (!isMatch) {
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+
+    // Generate token
+    const token = generateToken(user._id);
+
+    // Set JWT as HTTP-only cookie
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    });
+
+    // Send response without token in body
+    res.status(200).json({
+      message: 'Login successful',
+      user: {
+        id: user._id,
+        firstname: user.firstname,
+        lastname: user.lastname,
+        role: user.role,
+        email: user.user_email,
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const logoutUser = expressAsyncHandler(async (req, res) => {
+  // Destroy Passport session (if it exists)
+  req.logout(function (err) {
+    if (err) {
+      return res.status(500).json({ message: 'Error during logout', error: err });
+    }
+
+    // Clear JWT cookie
+    res.clearCookie('token', {
+      httpOnly: true,
+      sameSite: 'strict',
+      secure: process.env.NODE_ENV === 'production'
+    });
+
+    return res.status(200).json({ message: 'User logged out successfully' });
+  });
+});
+
 
 // Get all users with pagination (Admin only)
 const getAllUsers = async (req, res) => {
@@ -106,11 +173,23 @@ const deleteUser = async (req, res) => {
   }
 };
 
+//  Generate JWT Token
+const generateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {
+        expiresIn: '30d',
+    });
+};
+
+
 // Export all functions at the bottom
 module.exports = {
   createUser,
+  loginUser,
+  logoutUser,
   getAllUsers,
   getUserById,
   updateUser,
   deleteUser,
+  // requestPasswordReset,
+  // resetPassword,
 };

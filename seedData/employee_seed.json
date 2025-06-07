@@ -1,0 +1,122 @@
+[
+  {
+    "employee_id": "665f4b3f1c2d456789abc001",
+    "user_id": "665f4b3f1c2d456789a00101",
+    "store_id": "665f4b3f1c2d456789b00101",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc002",
+    "user_id": "665f4b3f1c2d456789a00102",
+    "store_id": "665f4b3f1c2d456789b00101",
+    "status": "inactive"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc003",
+    "user_id": "665f4b3f1c2d456789a00103",
+    "store_id": "665f4b3f1c2d456789b00102",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc004",
+    "user_id": "665f4b3f1c2d456789a00104",
+    "store_id": "665f4b3f1c2d456789b00103",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc005",
+    "user_id": "665f4b3f1c2d456789a00105",
+    "store_id": "665f4b3f1c2d456789b00101",
+    "status": "inactive"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc006",
+    "user_id": "665f4b3f1c2d456789a00106",
+    "store_id": "665f4b3f1c2d456789b00102",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc007",
+    "user_id": "665f4b3f1c2d456789a00107",
+    "store_id": "665f4b3f1c2d456789b00104",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc008",
+    "user_id": "665f4b3f1c2d456789a00108",
+    "store_id": "665f4b3f1c2d456789b00105",
+    "status": "inactive"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc009",
+    "user_id": "665f4b3f1c2d456789a00109",
+    "store_id": "665f4b3f1c2d456789b00103",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc00a",
+    "user_id": "665f4b3f1c2d456789a0010a",
+    "store_id": "665f4b3f1c2d456789b00104",
+    "status": "inactive"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc00b",
+    "user_id": "665f4b3f1c2d456789a0010b",
+    "store_id": "665f4b3f1c2d456789b00102",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc00c",
+    "user_id": "665f4b3f1c2d456789a0010c",
+    "store_id": "665f4b3f1c2d456789b00101",
+    "status": "inactive"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc00d",
+    "user_id": "665f4b3f1c2d456789a0010d",
+    "store_id": "665f4b3f1c2d456789b00105",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc00e",
+    "user_id": "665f4b3f1c2d456789a0010e",
+    "store_id": "665f4b3f1c2d456789b00104",
+    "status": "inactive"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc00f",
+    "user_id": "665f4b3f1c2d456789a0010f",
+    "store_id": "665f4b3f1c2d456789b00102",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc010",
+    "user_id": "665f4b3f1c2d456789a00110",
+    "store_id": "665f4b3f1c2d456789b00103",
+    "status": "inactive"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc011",
+    "user_id": "665f4b3f1c2d456789a00111",
+    "store_id": "665f4b3f1c2d456789b00101",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc012",
+    "user_id": "665f4b3f1c2d456789a00112",
+    "store_id": "665f4b3f1c2d456789b00105",
+    "status": "inactive"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc013",
+    "user_id": "665f4b3f1c2d456789a00113",
+    "store_id": "665f4b3f1c2d456789b00104",
+    "status": "active"
+  },
+  {
+    "employee_id": "665f4b3f1c2d456789abc014",
+    "user_id": "665f4b3f1c2d456789a00114",
+    "store_id": "665f4b3f1c2d456789b00102",
+    "status": "inactive"
+  }
+]
