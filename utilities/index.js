@@ -46,7 +46,8 @@ exports.buildHome = () => {
         <div class="container">
             <h1>Welcome to Drive Connect</h1>
             <p>Your trusted car sales API. Easily manage inventory, customers, and sales.</p>
-            <a href="/api-docs" target="_blank">View API Documentation</a>
+            <a href="/api-docs">📄 View API Documentation</a>
+            <a href="/users/google">🔒 Google OAuth Login</a>
         </div>
     </body>
     </html>

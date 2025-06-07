@@ -60,7 +60,7 @@ router.get(
   /* #swagger.tags = ['Users']
      #swagger.description = `
      Redirects the user to Google for OAuth login.  
-     👉 [Click here to open Google OAuth login in a new tab](http://localhost:5000/google)  
+     👉 [Click here to open Google OAuth login in a new tab](http://localhost:5000/users/google)  
      Not usable within Swagger because it redirects to Google.
      `
      #swagger.responses[302] = {
