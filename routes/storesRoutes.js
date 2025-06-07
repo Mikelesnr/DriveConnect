@@ -1,21 +1,51 @@
 const express = require("express");
 const router = express.Router();
 const storesController = require("../controllers/storesController");
+const { protect } = require("../utilities/authMiddleware");
 
-// Get all stores
-router.get("/", storesController.getAllStores); 
+router.get(
+  "/",
+  /* #swagger.tags = ['Stores']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Retrieve all stores (Requires authentication)' */
+  protect,
+  storesController.getAllStores
+);
 
-// Get a store by ID
-router.get("/:id", storesController.getStoreById); 
+router.get(
+  "/:id",
+  /* #swagger.tags = ['Stores']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Retrieve a store by ID (Requires authentication)' */
+  protect,
+  storesController.getStoreById
+);
 
-// Create a new store
-router.post("/", storesController.createStore); 
+router.post(
+  "/",
+  /* #swagger.tags = ['Stores']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Create a new store (Requires authentication)' */
+  protect,
+  storesController.createStore
+);
 
-// Update a store by ID
-router.put("/:id", storesController.updateStore); 
+router.put(
+  "/:id",
+  /* #swagger.tags = ['Stores']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Update a store by ID (Requires authentication)' */
+  protect,
+  storesController.updateStore
+);
 
-// Delete a store by ID
-router.delete("/:id", storesController.deleteStore); 
+router.delete(
+  "/:id",
+  /* #swagger.tags = ['Stores']
+     #swagger.security = [{ "BearerAuth": [] }]
+     #swagger.description = 'Delete a store by ID (Requires authentication)' */
+  protect,
+  storesController.deleteStore
+);
 
 module.exports = router;
-
