@@ -40,7 +40,7 @@ app.use((err, req, res, next) => {
 
 // Start Server
 const PORT = process.env.PORT || 5000;
-const serverUrl = process.env.SERVER_URL || "http://localhost:5000";
+const serverUrl = process.env.SERVER_URL || "http://localhost:3000";
 app.listen(PORT, () => {
   console.log(`Server running at ${serverUrl}`);
 });

@@ -10,6 +10,6 @@ Google Client ID: [DriveConnect](549016814970-k4vthhb223tgik90drm42bnpafl1ro1s.a
 
 git pull origin main
 
-auto run swagger, server and connect db simultaneously:  npm run start:dev 
+auto run swagger, server and connect db simultaneously: npm run start:dev
 
 Seed Usage: // node seed.js [mapped key]

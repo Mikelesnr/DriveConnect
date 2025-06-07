@@ -8,16 +8,18 @@ const employeeRoutes = require("./employeeRoutes");
 const customersRoutes = require("./customersRoutes");
 const categoriesRoutes = require("./categoriesRoutes");
 const carsRoutes = require("./carsRoutes");
-const swaggerRoutes = require('./swaggerRoutes');
-const returnsRoutes = require('./returnRoutes');
-const storeRoutes = require('./storeRoutes');
+const swaggerRoutes = require("./swaggerRoutes");
+const returnsRoutes = require("./returnRoutes");
+const storeRoutes = require("./storeRoutes");
 const resetPasswordRoutes = require("./passwordResetRoutes");
 
 // Base Route - Serves the Home Page
-router.get("/", 
-    /* #swagger.tags = ['Base']
+router.get(
+  "/",
+  /* #swagger.tags = ['Base']
      #swagger.description = 'Serve the home page' */
-     indexController.handleIndex);
+  indexController.handleIndex
+);
 
 router.use("/users", userRoutes);
 router.use("/sales", salesRoutes);
