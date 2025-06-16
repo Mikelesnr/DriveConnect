@@ -1,6 +1,6 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const User = require("../models/users/userModel"); // adjust path to your user model
+const User = require("../models/user-model"); // adjust path to your user model
 
 passport.use(
   new GoogleStrategy(
@@ -9,20 +9,32 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "/users/google/callback",
     },
+    // Inside your passport.js GoogleStrategy callback
     async (accessToken, refreshToken, profile, done) => {
       try {
         const email = profile.emails?.[0]?.value;
-        let user = await User.findOne({ email });
+        let user = await User.findOne({ user_email: email }); // <--- Ensure you query by user_email
 
         if (!user) {
+          // User does not exist, create a new one
           user = await User.create({
-            username: profile.displayName,
-            email,
-            firstName: profile.name.givenName,
-            lastName: profile.name.familyName,
-            profilePicture: profile.photos?.[0]?.value,
-            authType: "google",
+            firstname: profile.name.givenName, // <--- Corrected field name
+            lastname: profile.name.familyName, // <--- Corrected field name
+            user_email: email, // <--- Corrected field name
+            googleId: profile.id, // <--- Store Google's unique ID
+            profilePicture: profile.photos?.[0]?.value, // <--- Store profile picture
+            authType: "google", // <--- Set authType
+            role: "user", // <--- Explicitly set a default role for Google users, or rely on schema default
+            // user_password is intentionally omitted here as it's not required for Google authType
           });
+        } else {
+          // If user exists, update their Google ID if it's missing (for existing local users linking Google)
+          if (!user.googleId) {
+            user.googleId = profile.id;
+            user.profilePicture = profile.photos?.[0]?.value;
+            user.authType = "google"; // Set authType if an existing local user signs in via Google
+            await user.save();
+          }
         }
 
         return done(null, user);

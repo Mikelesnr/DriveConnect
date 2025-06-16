@@ -5,6 +5,12 @@ const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const { protect } = require("../utilities/authMiddleware");
 
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: "30d", // Token expires in 30 days
+  });
+};
+
 router.post(
   "/",
   /* #swagger.tags = ['Users']
