@@ -1,27 +1,28 @@
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const User = require("../models/users/userModel"); // adjust path to your user model
+const GitHubStrategy = require('passport-github2').Strategy;
+const passport = require('passport');
+const User = require('../models/user-model');
 
 passport.use(
-  new GoogleStrategy(
-    {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/users/google/callback",
+  new GitHubStrategy({
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: process.env.GITHUB_CALLBACK_URL,
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const email = profile.emails?.[0]?.value;
-        let user = await User.findOne({ email });
+        console.log('GitHub profile:', profile);
+        const email = profile.emails?.[0]?.value || `${profile.id}@github.com`;
+
+        let user = await User.findOne({ 'email': email });
 
         if (!user) {
           user = await User.create({
-            username: profile.displayName,
+            username: profile.username,
             email,
-            firstName: profile.name.givenName,
-            lastName: profile.name.familyName,
-            profilePicture: profile.photos?.[0]?.value,
-            authType: "google",
+            firstName: profile.displayName || profile.username,
+            lastName: '',
+            profilePicture: profile.photos?.[0]?.value || '',
+            authType: 'github'
           });
         }
 

@@ -1,10 +1,13 @@
 require("dotenv").config();
 const express = require("express");
+require('dotenv').config();
 const connectDB = require("./database/db");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./config/swagger.json");
 const cors = require('cors');
 const cookieparser = require('cookie-parser');
+const passport = require('passport');
+require('./config/passport')
 
 const app = express();
 
@@ -14,6 +17,7 @@ connectDB();
 // Middleware Section
 app.use(express.json()); // Parse incoming JSON requests
 app.use(cookieparser()); // Parse cookies
+app.use(passport.initialize());
 
 // CORS
 app.use(cors());
