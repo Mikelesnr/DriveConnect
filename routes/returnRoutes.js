@@ -22,7 +22,7 @@ router.post(
      }
      #swagger.responses[201] = {
          description: 'Return created successfully.',
-         schema: { $ref: '#/definitions/Return' }
+         schema: { $ref: '#/components/schemas/Return' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid data or sale not found.'
@@ -41,7 +41,7 @@ router.get(
      #swagger.description = 'Get all sales return records (Requires authentication)'
      #swagger.responses[200] = {
          description: 'Successfully retrieved all returns.',
-         schema: [{ $ref: '#/definitions/Return' }]
+         schema: [{ $ref: '#/components/schemas/Return' }]
      }
      #swagger.responses[500] = {
          description: 'Internal Server Error.'
@@ -64,7 +64,7 @@ router.get(
      }
      #swagger.responses[200] = {
          description: 'Return successfully retrieved.',
-         schema: { $ref: '#/definitions/Return' }
+         schema: { $ref: '#/components/schemas/Return' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid return ID.'
@@ -105,7 +105,7 @@ router.put(
      }
      #swagger.responses[200] = {
          description: 'Return successfully updated.',
-         schema: { $ref: '#/definitions/Return' }
+         schema: { $ref: '#/components/schemas/Return' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid return ID or invalid data.'

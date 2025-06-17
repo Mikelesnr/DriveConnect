@@ -21,7 +21,7 @@ router.post(
             status: "open"
         }
      }
-     #swagger.responses[201] = { description: 'Store successfully created.', schema: { $ref: '#/definitions/Store' } }
+     #swagger.responses[201] = { description: 'Store successfully created.', schema: { $ref: '#/components/schemas/Store' } }
      #swagger.responses[400] = { description: 'Bad Request: Invalid data provided or missing required fields.' }
      #swagger.responses[500] = { description: 'Internal Server Error.' }
   */
@@ -54,7 +54,7 @@ router.put(
      }
      #swagger.responses[200] = {
          description: 'Store successfully updated.',
-         schema: { $ref: '#/definitions/Store' }
+         schema: { $ref: '#/components/schemas/Store' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid store ID or invalid data.'
@@ -75,7 +75,7 @@ router.get(
      #swagger.description = 'Get all stores (Public)'
      #swagger.responses[200] = {
          description: 'Successfully retrieved all stores.',
-         schema: [{ $ref: '#/definitions/Store' }]
+         schema: [{ $ref: '#/components/schemas/Store' }]
      }
      #swagger.responses[500] = {
          description: 'Internal Server Error.'
@@ -113,7 +113,7 @@ router.get(
      }
      #swagger.responses[200] = {
          description: 'Successfully retrieved filtered stores.',
-         schema: [{ $ref: '#/definitions/Store' }]
+         schema: [{ $ref: '#/components/schemas/Store' }]
      }
      #swagger.responses[500] = {
          description: 'Internal Server Error.'
@@ -134,7 +134,7 @@ router.get(
      }
      #swagger.responses[200] = {
          description: 'Store successfully retrieved.',
-         schema: { $ref: '#/definitions/Store' }
+         schema: { $ref: '#/components/schemas/Store' }
      }
      #swagger.responses[404] = {
          description: 'Store not found.'

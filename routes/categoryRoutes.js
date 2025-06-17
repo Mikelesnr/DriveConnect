@@ -9,7 +9,7 @@ router.get(
      #swagger.description = 'Get all categories (No authentication required)'
      #swagger.responses[200] = {
          description: 'Successfully retrieved all categories.',
-         schema: [{ $ref: '#/definitions/Category' }]
+         schema: [{ $ref: '#/components/schemas/Category' }]
      }
      #swagger.responses[500] = {
          description: 'Internal Server Error.'
@@ -31,7 +31,7 @@ router.get(
      }
      #swagger.responses[200] = {
          description: 'Category successfully retrieved.',
-         schema: { $ref: '#/definitions/Category' }
+         schema: { $ref: '#/components/schemas/Category' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid category ID.'
@@ -63,7 +63,7 @@ router.post(
      }
      #swagger.responses[201] = {
          description: 'Category successfully created.',
-         schema: { $ref: '#/definitions/Category' }
+         schema: { $ref: '#/components/schemas/Category' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Category name is required.'
@@ -98,7 +98,7 @@ router.put(
      }
      #swagger.responses[200] = {
          description: 'Category successfully updated.',
-         schema: { $ref: '#/definitions/Category' }
+         schema: { $ref: '#/components/schemas/Category' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid category ID or invalid data.'

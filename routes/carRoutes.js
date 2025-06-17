@@ -10,7 +10,7 @@ router.get(
      #swagger.description = 'Get all cars (No authentication required)'
      #swagger.responses[200] = {
          description: 'Successfully retrieved all cars.',
-         schema: [{ $ref: '#/definitions/Car' }]
+         schema: [{ $ref: '#/components/schemas/Car' }]
      }
      #swagger.responses[500] = {
          description: 'Internal Server Error.'
@@ -31,7 +31,7 @@ router.get(
      }
      #swagger.responses[200] = {
          description: 'Car successfully retrieved.',
-         schema: { $ref: '#/definitions/Car' }
+         schema: { $ref: '#/components/schemas/Car' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid car ID.'
@@ -70,7 +70,7 @@ router.post(
      }
      #swagger.responses[201] = {
          description: 'Car successfully created.',
-         schema: { $ref: '#/definitions/Car' }
+         schema: { $ref: '#/components/schemas/Car' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: All required fields must be provided.'
@@ -111,7 +111,7 @@ router.put(
      }
      #swagger.responses[200] = {
          description: 'Car successfully updated.',
-         schema: { $ref: '#/definitions/Car' }
+         schema: { $ref: '#/components/schemas/Car' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid car ID or invalid data.'

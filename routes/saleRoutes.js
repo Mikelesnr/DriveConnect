@@ -22,7 +22,7 @@ router.post(
      }
      #swagger.responses[201] = {
          description: 'Sale successfully created.',
-         schema: { $ref: '#/definitions/Sale' }
+         schema: { $ref: '#/components/schemas/Sale' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid sale data.'
@@ -56,7 +56,7 @@ router.get(
      }
      #swagger.responses[200] = {
          description: 'Successfully retrieved all sales.',
-         schema: [{ $ref: '#/definitions/Sale' }]
+         schema: [{ $ref: '#/components/schemas/Sale' }]
      }
      #swagger.responses[500] = {
          description: 'Internal Server Error.'
@@ -79,7 +79,7 @@ router.get(
      }
      #swagger.responses[200] = {
          description: 'Sale successfully retrieved.',
-         schema: { $ref: '#/definitions/Sale' }
+         schema: { $ref: '#/components/schemas/Sale' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid sale ID.'
@@ -119,7 +119,7 @@ router.put(
      }
      #swagger.responses[200] = {
          description: 'Sale successfully updated.',
-         schema: { $ref: '#/definitions/Sale' }
+         schema: { $ref: '#/components/schemas/Sale' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid sale ID or invalid data.'
