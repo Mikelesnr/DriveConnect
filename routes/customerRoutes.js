@@ -10,7 +10,7 @@ router.get(
      #swagger.description = 'Get all customers (Requires authentication)'
      #swagger.responses[200] = {
          description: 'Successfully retrieved all customers.',
-         schema: [{ $ref: '#/definitions/Customer' }]
+         schema: [{ $ref: '#/components/schemas/Customer' }]
      }
      #swagger.responses[500] = {
          description: 'Internal Server Error.'
@@ -33,7 +33,7 @@ router.get(
      }
      #swagger.responses[200] = {
          description: 'Customer successfully retrieved.',
-         schema: { $ref: '#/definitions/Customer' }
+         schema: { $ref: '#/components/schemas/Customer' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid customer ID.'
@@ -67,7 +67,7 @@ router.post(
      }
      #swagger.responses[201] = {
          description: 'Customer successfully created.',
-         schema: { $ref: '#/definitions/Customer' }
+         schema: { $ref: '#/components/schemas/Customer' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: All required fields must be provided.'
@@ -104,7 +104,7 @@ router.put(
      }
      #swagger.responses[200] = {
          description: 'Customer successfully updated.',
-         schema: { $ref: '#/definitions/Customer' }
+         schema: { $ref: '#/components/schemas/Customer' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid customer ID or invalid data.'

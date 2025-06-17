@@ -23,7 +23,7 @@ router.post(
      }
      #swagger.responses[201] = {
          description: 'Employee successfully created.',
-         schema: { $ref: '#/definitions/Employee' }
+         schema: { $ref: '#/components/schemas/Employee' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid data provided.'
@@ -42,7 +42,7 @@ router.get(
      #swagger.description = 'Get all employees with role "admin" (Admin only)'
      #swagger.responses[200] = {
          description: 'Successfully retrieved all employees.',
-         schema: [{ $ref: '#/definitions/Employee' }]
+         schema: [{ $ref: '#/components/schemas/Employee' }]
      }
      #swagger.responses[500] = {
          description: 'Internal Server Error.'
@@ -66,7 +66,7 @@ router.get(
      }
      #swagger.responses[200] = {
          description: 'Employee successfully retrieved.',
-         schema: { $ref: '#/definitions/Employee' }
+         schema: { $ref: '#/components/schemas/Employee' }
      }
      #swagger.responses[404] = {
          description: 'Employee not found.'
@@ -103,7 +103,7 @@ router.put(
      }
      #swagger.responses[200] = {
          description: 'Employee successfully updated.',
-         schema: { $ref: '#/definitions/Employee' }
+         schema: { $ref: '#/components/schemas/Employee' }
      }
      #swagger.responses[400] = {
          description: 'Bad Request: Invalid data provided.'
