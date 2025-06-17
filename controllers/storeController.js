@@ -1,9 +1,8 @@
 const Store = require("../models/store-model");
 
-// @desc Create a new store
-// @route POST /api/stores
-// @access Public or Protected (if needed)
 const createStore = async (req, res) => {
+  //#Swagger-tags["Store"]
+  //#swagger.summary = 'Create a new store'
   try {
     const { address, phone, store_name, floor_size, status } = req.body;
 
@@ -22,10 +21,9 @@ const createStore = async (req, res) => {
   }
 };
 
-// @desc Get all stores
-// @route GET /api/stores
-// @access Public or Protected (if needed)
 const getStores = async (req, res) => {
+  //#Swagger-tags["Store"]
+  //#swagger.summary = 'Get all stores'
   try {
     const stores = await Store.find();
     res.json(stores);
@@ -34,33 +32,29 @@ const getStores = async (req, res) => {
   }
 };
 
-// @desc Get all stores
-// @route GET /api/stores
-// @access Public or Protected (if needed)
 const getFilteredStores = async (req, res) => {
+  //#Swagger-tags["Store"]
+  //#swagger.summary = 'Get filtered stores'
   try {
     const { status, sort, search } = req.query;
 
     let filter = {};
     let sortOption = {};
 
-    // Filter by status
     if (status) {
       filter.status = status;
     }
 
-    // Search by phone or store_name
     if (search) {
       filter.$or = [
-        { phone: { $regex: search, $options: 'i' } },
-        { store_name: { $regex: search, $options: 'i' } },
+        { phone: { $regex: search, $options: "i" } },
+        { store_name: { $regex: search, $options: "i" } },
       ];
     }
 
-    // Sort by floor_size (asc or desc)
-    if (sort === 'floor_size_asc') {
+    if (sort === "floor_size_asc") {
       sortOption.floor_size = 1;
-    } else if (sort === 'floor_size_desc') {
+    } else if (sort === "floor_size_desc") {
       sortOption.floor_size = -1;
     }
 
@@ -71,10 +65,9 @@ const getFilteredStores = async (req, res) => {
   }
 };
 
-// @desc Get store by ID
-// @route GET /api/stores/:id
-// @access Public or Protected
 const getStoreById = async (req, res) => {
+  //#Swagger-tags["Store"]
+  //#swagger.summary = 'Get store by ID'
   try {
     const store = await Store.findById(req.params.id);
     if (!store) return res.status(404).json({ error: "Store not found" });
@@ -84,12 +77,13 @@ const getStoreById = async (req, res) => {
   }
 };
 
-// @desc Update store
-// @route PUT /api/stores/:id
-// @access Public or Protected
 const updateStore = async (req, res) => {
+  //#Swagger-tags["Store"]
+  //#swagger.summary = 'Update a store by ID'
   try {
-    const updated = await Store.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updated = await Store.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     if (!updated) return res.status(404).json({ error: "Store not found" });
     res.json(updated);
   } catch (err) {
@@ -97,10 +91,9 @@ const updateStore = async (req, res) => {
   }
 };
 
-// @desc Delete store
-// @route DELETE /api/stores/:id
-// @access Public or Protected
 const deleteStore = async (req, res) => {
+  //#Swagger-tags["Store"]
+  //#swagger.summary = 'Delete a store by ID'
   try {
     const deleted = await Store.findByIdAndDelete(req.params.id);
     if (!deleted) return res.status(404).json({ error: "Store not found" });

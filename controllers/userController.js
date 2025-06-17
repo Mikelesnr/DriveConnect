@@ -8,6 +8,8 @@ const expressAsyncHandler = require("express-async-handler");
 
 // Create a new user
 const createUser = async (req, res) => {
+  //#Swagger-tags["Users"]
+  //#Swagger-summary["Register a new user"]
   try {
     const {
       firstname,
@@ -44,6 +46,8 @@ const createUser = async (req, res) => {
 
 // Login user
 const loginUser = async (req, res) => {
+  //#Swagger-tags["Users"]
+  //#Swagger-summary["Login registered user"]
   try {
     const { user_email, user_password } = req.body;
 
@@ -87,6 +91,8 @@ const loginUser = async (req, res) => {
 };
 
 const logoutUser = expressAsyncHandler(async (req, res) => {
+  //#Swagger-tags["Users"]
+  //#Swagger-summary["Logout user"]
   // Destroy Passport session (if it exists)
   req.logout(function (err) {
     if (err) {
@@ -108,6 +114,8 @@ const logoutUser = expressAsyncHandler(async (req, res) => {
 
 // Get all users with pagination (Admin only)
 const getAllUsers = async (req, res) => {
+  //#Swagger-tags["Users"]
+  //#Swagger-summary["Get all users with pagination (Admin only)"]
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
@@ -121,6 +129,8 @@ const getAllUsers = async (req, res) => {
 
 // Get a user by ID
 const getUserById = async (req, res) => {
+  //#Swagger-tags["Users"]
+  //#Swagger-summary["Get a user by ID"]
   try {
     const user = await User.findById(req.params.id);
     if (!user) return res.status(404).json({ error: "User not found" });
@@ -132,6 +142,8 @@ const getUserById = async (req, res) => {
 
 // Update a user
 const updateUser = async (req, res) => {
+  //#Swagger-tags["Users"]
+  //#Swagger-summary["Update a user"]
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -145,6 +157,8 @@ const updateUser = async (req, res) => {
 
 // Delete a user (Admin or user themselves)
 const deleteUser = async (req, res) => {
+  //#Swagger-tags["Users"]
+  //#Swagger-summary["Delete a user (Admin or user themselves)"]
   try {
     const user = await User.findById(req.params.id);
     if (!user) return res.status(404).json({ error: "User not found" });

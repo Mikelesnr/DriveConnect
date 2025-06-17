@@ -40,14 +40,15 @@ const handleGetCategoryById = async (req, res) => {
 // This function is responsible for adding a new category to the database.
 const handleCreateCategory = async (req, res) => {
   //#Swagger-tags["Categories"]
-  const { name, description } = req.body;
+  const { category_name, description } = req.body; // Changed 'name' to 'category_name'
 
-  if (!name) {
+  if (!category_name) {
+    // Changed 'name' to 'category_name'
     return res.status(400).json({ error: "Category name is required" });
   }
 
   try {
-    const newCategory = new Category({ category_name: name, description });
+    const newCategory = new Category({ category_name, description }); // Directly use category_name
     await newCategory.save();
     res.status(201).json(newCategory);
   } catch (error) {

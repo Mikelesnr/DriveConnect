@@ -1,8 +1,10 @@
 const Employee = require("../models/employee-model");
-const { paginate } = require("../utilities");
+const { paginate } = require("../utilities"); // Assuming this utility exists
 
 // Create a new employee
 const createEmployee = async (req, res) => {
+  //#Swagger-tags["Employees"]
+  //#swagger.summary = 'Register a new employee'
   try {
     const employee = new Employee(req.body);
     await employee.save();
@@ -14,6 +16,8 @@ const createEmployee = async (req, res) => {
 
 // Get all employees (Admin only) with pagination
 const getAllEmployees = async (req, res) => {
+  //#Swagger-tags["Employees"]
+  //#swagger.summary = 'Get all employees'
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
@@ -32,6 +36,8 @@ const getAllEmployees = async (req, res) => {
 
 // Get a single employee by ID
 const getEmployeeById = async (req, res) => {
+  //#Swagger-tags["Employees"]
+  //#swagger.summary = 'Get an employee by ID'
   try {
     const employee = await Employee.findById(req.params.id).populate(
       "user_id store_id"
@@ -45,6 +51,8 @@ const getEmployeeById = async (req, res) => {
 
 // Update employee (Only admin or the actual employee can update)
 const updateEmployee = async (req, res) => {
+  //#Swagger-tags["Employees"]
+  //#swagger.summary = 'Update an employee by ID'
   try {
     const employee = await Employee.findById(req.params.id);
 
@@ -55,12 +63,10 @@ const updateEmployee = async (req, res) => {
       req.user.role !== "admin" &&
       req.user._id.toString() !== employee.user_id.toString()
     ) {
-      return res
-        .status(403)
-        .json({
-          error:
-            "Access denied: Only admin or the employee can update this record",
-        });
+      return res.status(403).json({
+        error:
+          "Access denied: Only admin or the employee can update this record",
+      });
     }
 
     const updatedEmployee = await Employee.findByIdAndUpdate(
@@ -76,6 +82,8 @@ const updateEmployee = async (req, res) => {
 
 // Delete an employee (Admin only)
 const deleteEmployee = async (req, res) => {
+  //#Swagger-tags["Employees"]
+  //#swagger.summary = 'Delete an employee by ID'
   try {
     const employee = await Employee.findByIdAndDelete(req.params.id);
     if (!employee) return res.status(404).json({ error: "Employee not found" });

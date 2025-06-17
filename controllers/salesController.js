@@ -3,6 +3,8 @@ const { paginate } = require("../utilities");
 
 // Create a sale
 const createSale = async (req, res) => {
+  //#Swagger-tags=["Sales"]
+  //#swagger.summary = 'Create a new sale'
   try {
     const sale = new Sale(req.body);
     await sale.save();
@@ -14,6 +16,8 @@ const createSale = async (req, res) => {
 
 // Get all sales with pagination
 const getAllSales = async (req, res) => {
+  //#Swagger-tags=["Sales"]
+  //#swagger.summary = 'Get all sales'
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
@@ -32,6 +36,8 @@ const getAllSales = async (req, res) => {
 
 // Get a sale by ID
 const getSaleById = async (req, res) => {
+  //#Swagger-tags=["Sales"]
+  //#swagger.summary = 'Get a sale by ID'
   try {
     const sale = await Sale.findById(req.params.id).populate(
       "customer_id car_id employee_id"
@@ -45,6 +51,8 @@ const getSaleById = async (req, res) => {
 
 // Update a sale
 const updateSale = async (req, res) => {
+  //#Swagger-tags=["Sales"]
+  //#swagger.summary = 'Update a sale by ID'
   try {
     const sale = await Sale.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -58,6 +66,8 @@ const updateSale = async (req, res) => {
 
 // Delete a sale
 const deleteSale = async (req, res) => {
+  //#Swagger-tags=["Sales"]
+  //#swagger.summary = 'Delete a sale by ID'
   try {
     const sale = await Sale.findByIdAndDelete(req.params.id);
     if (!sale) return res.status(404).json({ error: "Sale not found" });
@@ -67,7 +77,6 @@ const deleteSale = async (req, res) => {
   }
 };
 
-// Export all functions
 module.exports = {
   createSale,
   getAllSales,
