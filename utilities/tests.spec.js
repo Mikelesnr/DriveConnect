@@ -15,12 +15,12 @@ const Return = require("../models/return-model");
 const User = require("../models/user-model");
 
 // Import all routes
-const carRoutes = require("../routes/carsRoutes");
-const categoryRoutes = require("../routes/categoriesRoutes");
-const customerRoutes = require("../routes/customersRoutes");
+const carRoutes = require("../routes/carRoutes");
+const categoryRoutes = require("../routes/categoryRoutes");
+const customerRoutes = require("../routes/customerRoutes");
 const employeeRoutes = require("../routes/employeeRoutes");
 const returnRoutes = require("../routes/returnRoutes");
-const salesRoutes = require("../routes/salesRoutes");
+const salesRoutes = require("../routes/saleRoutes");
 const storeRoutes = require("../routes/storeRoutes"); // Assuming this uses storeController with getFilteredStores
 const userRoutes = require("../routes/userRoutes");
 

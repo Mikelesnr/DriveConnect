@@ -102,6 +102,7 @@ const handleUpdateCar = async (req, res) => {
     }
 
     res.status(200).json(updatedCar);
+    res.json({ message: "Car updated successfully" });
   } catch (error) {
     console.error("Error updating car:", error);
     res.status(500).json({ error: "Internal server error" });
@@ -126,6 +127,7 @@ const handleDeleteCar = async (req, res) => {
     }
 
     res.status(204).send();
+    res.json({ message: "Car deleted successfully" });
   } catch (error) {
     console.error("Error deleting car:", error);
     res.status(500).json({ error: "Internal server error" });
