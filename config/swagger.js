@@ -153,6 +153,9 @@ const doc = {
   },
 };
 
+// Ensure schemas appear at the bottom
+doc.definitions = doc.components.schemas;
+
 const outputFile = "./swagger.json";
 const endpointsFiles = ["../routes/index.js"];
 
