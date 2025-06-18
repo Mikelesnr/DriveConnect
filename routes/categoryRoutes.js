@@ -57,7 +57,7 @@ router.post(
         description: 'Category data to create',
         required: true,
         schema: {
-            name: 'Sedan',
+            category_name: 'Sedan',
             description: 'Standard four-door cars'
         }
      }
@@ -92,7 +92,7 @@ router.put(
         description: 'Updated category data',
         required: true,
         schema: {
-            name: 'Sports Car',
+            category_name: 'Sports Car',
             description: 'High-performance vehicles.'
         }
      }

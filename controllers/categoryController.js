@@ -64,7 +64,7 @@ const handleUpdateCategory = async (req, res) => {
   //#Swagger-tags["Categories"]
 
   const { id } = req.params;
-  const { name, description } = req.body;
+  const { category_name, description } = req.body;
 
   if (!ObjectId.isValid(id)) {
     return res.status(400).json({ error: "Invalid category ID" });
@@ -73,7 +73,7 @@ const handleUpdateCategory = async (req, res) => {
   try {
     const updatedCategory = await Category.findByIdAndUpdate(
       id,
-      { category_name: name, description },
+      { category_name, description },
       { new: true }
     );
     if (!updatedCategory) {
