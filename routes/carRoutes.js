@@ -43,7 +43,6 @@ router.get(
          description: 'Internal Server Error.'
      }
   */
-  protect,
   carsController.handleGetCarById
 );
 
