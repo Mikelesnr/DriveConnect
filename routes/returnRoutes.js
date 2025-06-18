@@ -98,7 +98,6 @@ router.put(
         description: 'Updated return data',
         required: true,
         schema: {
-            sale_id: "60c72b2f9b1e8b001c8e4c3e",
             reason: "Customer changed mind",
             refund_amount: 120.00
         }
